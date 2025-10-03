@@ -491,6 +491,67 @@ param_grid = {
 
 ---
 
+## 8. Visualization and Interpretation
+
+### 8.1 Exploratory Data Analysis Visualizations
+
+The project generates comprehensive visualizations to understand data patterns and model behavior:
+
+#### 8.1.1 Survival Analysis Plots
+- **Survival by Gender**: Clear visualization of the "women and children first" policy
+- **Survival by Class**: Demonstrates socioeconomic impact on survival rates
+- **Age Distribution**: Shows demographic patterns among passengers
+- **Fare Distribution**: Reveals economic stratification among passengers
+
+#### 8.1.2 Feature Relationship Analysis
+- **Correlation Matrix**: Heatmap showing relationships between all engineered features
+- **Feature Interactions**: Visualization of Age_Class and Fare_Per_Person interactions
+- **Missing Data Patterns**: Analysis of data completeness across features
+
+### 8.2 Model Performance Visualizations
+
+#### 8.2.1 Classification Results
+- **Confusion Matrix**: Visual representation of prediction accuracy
+- **ROC Curve**: Performance across different classification thresholds
+- **Precision-Recall Curve**: Balance between precision and recall metrics
+- **Classification Report**: Detailed metrics breakdown by class
+
+#### 8.2.2 Feature Importance Visualization
+- **Feature Importance Bar Chart**: Clear ranking of feature contributions
+- **Cumulative Importance**: Shows how few features drive most predictions
+- **Engineered vs Original Features**: Comparison of feature types' effectiveness
+
+### 8.3 Decision Tree Structure Analysis
+
+#### 8.3.1 Tree Visualization
+- **Complete Tree Structure**: Full decision tree with all nodes and splits
+- **Decision Paths**: Critical pathways leading to survival/death predictions
+- **Node Analysis**: Distribution of samples and purity at each decision point
+- **Pruning Visualization**: Impact of depth limitations on tree structure
+
+#### 8.3.2 Decision Rules Interpretation
+Key decision patterns identified:
+1. **Primary Split**: Gender (Sex ≤ 0.5) separates passengers into major groups
+2. **Economic Factors**: Fare_Per_Person creates economic stratification
+3. **Family Dynamics**: FamilySize influences survival within gender groups
+4. **Age-Class Interactions**: Complex patterns reveal social hierarchies
+
+### 8.4 Business Intelligence Extraction
+
+#### 8.4.1 Historical Validation
+- **"Women and Children First"**: Data confirms historical evacuation protocols
+- **Class Privilege**: First-class passengers had significantly higher survival rates
+- **Family Strategies**: Medium-sized families showed optimal survival patterns
+- **Economic Impact**: Individual economic status more predictive than family wealth
+
+#### 8.4.2 Actionable Insights
+- **Emergency Planning**: Priority systems should consider family groupings
+- **Resource Allocation**: Economic factors significantly influence evacuation success
+- **Training Programs**: Staff should be trained on family-based evacuation strategies
+- **Safety Protocols**: Modern applications for building and transportation safety
+
+---
+
 ## 9. Comparison Analysis
 
 ### 9.1 Feature Engineering Impact Analysis
@@ -709,7 +770,7 @@ The Titanic dataset teaches us that behind every data point is a human story, an
 
 ---
 
-## 9. References
+## 11. References
 
 1. Kaggle Titanic Competition: https://www.kaggle.com/c/titanic
 2. Breiman, L., et al. (1984). "Classification and Regression Trees." CRC Press.
