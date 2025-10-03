@@ -89,4 +89,4 @@ $RECYCLE.BIN/
 *.temp
 
 # Kaggle
-kaggle.json
+kaggle.json*.zip
