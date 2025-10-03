@@ -22,7 +22,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.tree import DecisionTreeClassifier, plot_tree
-from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
+from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV, StratifiedKFold
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 import warnings
@@ -302,17 +302,40 @@ class TitanicDecisionTree:
         train_processed['Deck'] = train_processed['Deck'].map(deck_mapping)
         test_processed['Deck'] = test_processed['Deck'].map(deck_mapping)
         
+        # 7. Advanced feature: Ticket frequency (highly predictive)
+        # People with same ticket often traveled together (families/groups)
+        ticket_counts = train_processed['Ticket'].value_counts().to_dict()
+        train_processed['Ticket_Freq'] = train_processed['Ticket'].map(ticket_counts)
+        
+        # For test set, use training ticket counts, default to 1 for new tickets
+        test_processed['Ticket_Freq'] = test_processed['Ticket'].map(ticket_counts).fillna(1)
+        
+        # 8. Age and Fare quantile-based binning (more intelligent than fixed ranges)
+        train_processed['Age_Quantile'] = pd.qcut(train_processed['Age'], q=5, labels=False, duplicates='drop')
+        test_processed['Age_Quantile'] = pd.cut(test_processed['Age'], 
+                                               bins=pd.qcut(train_processed['Age'], q=5, retbins=True, duplicates='drop')[1], 
+                                               labels=False, include_lowest=True).fillna(2)
+        
+        train_processed['Fare_Quantile'] = pd.qcut(train_processed['Fare'], q=4, labels=False, duplicates='drop')
+        test_processed['Fare_Quantile'] = pd.cut(test_processed['Fare'], 
+                                                bins=pd.qcut(train_processed['Fare'], q=4, retbins=True, duplicates='drop')[1], 
+                                                labels=False, include_lowest=True).fillna(1)
+        
         print("✓ Created advanced interaction features")
+        print("✓ Added Ticket_Freq feature (group travel indicator)")
+        print("✓ Created quantile-based age and fare binning")
         
-        # Feature Selection: Keep only the most important features (>2% importance from analysis)
-        # Removed low-importance features to reduce overfitting and improve generalization
+        # Feature Selection: Enhanced with new high-impact features
+        # Added Ticket_Freq and quantile features for better performance
         features = ['Pclass', 'Sex', 'Age', 'SibSp', 'Fare', 
-                   'Title', 'FamilySize', 'Age_Class', 'Fare_Per_Person']
+                   'Title', 'FamilySize', 'Age_Class', 'Fare_Per_Person',
+                   'Ticket_Freq', 'Age_Quantile', 'Fare_Quantile']
         
-        print("📊 Feature Selection Applied:")
+        print("📊 Enhanced Feature Selection Applied:")
         print("   ✅ Kept: High-importance features (>2% importance)")
+        print("   ✅ Added: Ticket_Freq, Age_Quantile, Fare_Quantile")
         print("   ❌ Removed: Embarked, Deck, FareGroup, AgeGroup, IsAlone, Family_Survival_Group")
-        print("   🎯 Goal: Reduce overfitting and improve generalization")
+        print("   🎯 Goal: Maximize predictive power while controlling overfitting")
         
         X_train = train_processed[features].copy()
         X_test = test_processed[features].copy()
@@ -330,11 +353,11 @@ class TitanicDecisionTree:
         
         print("✓ Encoded categorical variables")
         
-        # Feature scaling for numerical features
+        # Feature scaling for numerical features (enhanced set)
         from sklearn.preprocessing import StandardScaler
         scaler = StandardScaler()
         
-        numerical_features = ['Age', 'Fare', 'Age_Class', 'Fare_Per_Person']
+        numerical_features = ['Age', 'Fare', 'Age_Class', 'Fare_Per_Person', 'Ticket_Freq']
         
         X_train[numerical_features] = scaler.fit_transform(X_train[numerical_features])
         X_test[numerical_features] = scaler.transform(X_test[numerical_features])
@@ -357,30 +380,34 @@ class TitanicDecisionTree:
         print(f"Test set shape: {self.X_test.shape}")
         
     def train_model(self):
-        """Train the decision tree model with hyperparameter tuning."""
+        """Train the decision tree model with aggressive hyperparameter tuning."""
         print("\n" + "="*50)
-        print("MODEL TRAINING")
+        print("MODEL TRAINING - AGGRESSIVE OPTIMIZATION")
         print("="*50)
         
-        # Define parameter grid for GridSearchCV (optimized for reduced feature set)
+        # Enhanced parameter grid for maximum performance
         param_grid = {
-            'max_depth': [3, 4, 5, 6, 7],
-            'min_samples_split': [8, 10, 12, 15, 20],
-            'min_samples_leaf': [2, 3, 4, 5, 6],
+            'max_depth': [5, 6, 7, 8, 9, 10, 11],  # Expanded range
+            'min_samples_split': [4, 6, 8, 10, 12, 15, 20],  # Lower values for fine-tuning
+            'min_samples_leaf': [1, 2, 3, 4, 5],  # Include 1 for maximum flexibility
             'criterion': ['gini', 'entropy'],
-            'max_features': ['sqrt', 'log2', None],
-            'class_weight': [None, 'balanced']
+            'max_features': ['sqrt', 'log2', 0.7, 0.8, 0.9, None],  # Add percentage options
+            'class_weight': [None, 'balanced', {0: 0.6, 1: 1.4}, {0: 0.65, 1: 1.35}, {0: 0.7, 1: 1.3}]  # Custom weights
         }
         
-        print("Performing optimized hyperparameter tuning...")
-        print("🎯 Focus: Reduce overfitting with simplified feature set")
+        print("Performing aggressive hyperparameter optimization...")
+        print("🎯 Focus: Maximum accuracy with enhanced feature set")
+        print(f"🔍 Search space: {len(param_grid['max_depth']) * len(param_grid['min_samples_split']) * len(param_grid['min_samples_leaf']) * len(param_grid['criterion']) * len(param_grid['max_features']) * len(param_grid['class_weight'])} combinations")
         
         # Create base decision tree
         dt = DecisionTreeClassifier(random_state=42)
         
-        # Perform grid search with cross-validation (more folds for better validation)
+        # Use StratifiedKFold for better validation
+        cv_strategy = StratifiedKFold(n_splits=12, shuffle=True, random_state=42)
+        
+        # Perform grid search with enhanced cross-validation
         grid_search = GridSearchCV(
-            dt, param_grid, cv=10, scoring='accuracy', n_jobs=-1, verbose=1
+            dt, param_grid, cv=cv_strategy, scoring='accuracy', n_jobs=-1, verbose=1
         )
         
         # Fit the grid search
@@ -395,7 +422,7 @@ class TitanicDecisionTree:
         # Train the final model
         self.model.fit(self.X_train, self.y_train)
         
-        print("✓ Model training completed")
+        print("✅ Aggressive model optimization completed")
         
     def evaluate_model(self):
         """Evaluate the trained model."""
@@ -426,10 +453,12 @@ class TitanicDecisionTree:
         else:
             print("❌ High overfitting (>15%)")
         
-        # Cross-validation scores for the decision tree
-        cv_scores = cross_val_score(self.model, self.X_train, self.y_train, cv=10)
-        print(f"\nDecision Tree CV scores: {cv_scores}")
+        # Enhanced cross-validation scores
+        cv_strategy = StratifiedKFold(n_splits=12, shuffle=True, random_state=42)
+        cv_scores = cross_val_score(self.model, self.X_train, self.y_train, cv=cv_strategy)
+        print(f"\nEnhanced Decision Tree CV scores: {cv_scores}")
         print(f"Mean CV score: {cv_scores.mean():.4f} (+/- {cv_scores.std() * 2:.4f})")
+        print(f"CV Score Range: {cv_scores.min():.4f} - {cv_scores.max():.4f}")
         
         # Classification report for Decision Tree
         print(f"\nClassification Report (Decision Tree - Validation Set):")

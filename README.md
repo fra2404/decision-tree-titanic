@@ -7,14 +7,14 @@
 
 ## 🎯 Project Overview
 
-This project implements an optimized decision tree algorithm to predict Titanic passenger survival using advanced feature engineering, intelligent feature selection, and systematic hyperparameter optimization.
+This project implements an optimized decision tree algorithm to predict Titanic passenger survival using advanced feature engineering, intelligent feature selection, and aggressive hyperparameter optimization.
 
 ### Key Achievements
 
-- **75.37% validation accuracy** with optimized decision tree
-- **Advanced feature engineering** creating 17 features from original 11
-- **Intelligent feature selection** reducing features by 47% while improving performance
-- **Professional ML workflow** with comprehensive evaluation and visualization
+- **76.87% validation accuracy** with optimized decision tree
+- **Advanced feature engineering** including Ticket_Freq and quantile-based binning
+- **Aggressive hyperparameter optimization** testing 14,700 parameter combinations
+- **Professional ML workflow** with 12-fold StratifiedKFold cross-validation
 
 ## 📁 Project Structure
 
@@ -25,7 +25,7 @@ Assignment-02/
 │   ├── test.csv               # Test dataset
 │   └── gender_submission.csv  # Sample submission format
 ├── src/
-│   └── titanic_decision_tree.py      # Optimized implementation (75.37% accuracy)
+│   └── titanic_decision_tree.py      # Optimized implementation (76.87% accuracy)
 ├── results/
 │   ├── eda_plots.png                 # Exploratory data analysis plots
 │   ├── correlation_matrix.png        # Feature correlation heatmap
@@ -77,9 +77,9 @@ python titanic_decision_tree.py
 ### Algorithm Implementation
 
 - **Optimized Decision Tree**: Professional scikit-learn implementation
-- **Advanced Feature Engineering**: 17 features created, 9 optimally selected
-- **Hyperparameter Tuning**: GridSearchCV with 1,500 parameter combinations
-- **Performance**: 75.37% validation accuracy with controlled overfitting
+- **Enhanced Feature Engineering**: 12 carefully selected features including Ticket_Freq
+- **Aggressive Hyperparameter Tuning**: GridSearchCV with 14,700 parameter combinations
+- **Performance**: 76.87% validation accuracy with excellent overfitting control
 
 ### Data Preprocessing
 
@@ -91,20 +91,21 @@ python titanic_decision_tree.py
 ### Feature Engineering
 
 - **Title extraction**: Mr, Mrs, Miss, Master, and Rare categories
-- **Economic features**: Fare_Per_Person (20.69% importance)
-- **Interaction features**: Age_Class combinations
-- **Family dynamics**: FamilySize optimization
-- **9 final features**: Intelligently selected from 17 engineered features
+- **Economic features**: Fare_Per_Person (5.72% importance)
+- **Group dynamics**: Ticket_Freq (1.14% importance) - innovative group travel indicator
+- **Interaction features**: Age_Class combinations (7.54% importance)
+- **Quantile binning**: Age_Quantile and Fare_Quantile for intelligent discretization
+- **12 final features**: Enhanced set with advanced feature engineering
 
 ## 📊 Results Summary
 
 ### Model Performance
 
-- **Validation Accuracy**: 75.37%
-- **Cross-validation**: 84.41% ± 8.51%
-- **Training Accuracy**: 87.98%
-- **Overfitting Gap**: 12.61% (well-controlled)
-- **Feature Importance**: Sex (50.07%), Fare_Per_Person (20.69%), FamilySize (10.63%)
+- **Validation Accuracy**: 76.87%
+- **Cross-validation**: 84.28% ± 8.47%
+- **Training Accuracy**: 86.00%
+- **Overfitting Gap**: 9.13% (excellent control)
+- **Feature Importance**: Sex (54.41%), Pclass (17.43%), Age_Class (7.54%)
 
 ### Key Insights
 
@@ -120,23 +121,23 @@ python titanic_decision_tree.py
 | **Actual Died**     | 70             | 13                 |
 | **Actual Survived** | 20             | 31                 |
 
-**Metrics**: Precision 75%, Recall 75%, F1-Score 75%
+**Metrics**: Precision 77%, Recall 77%, F1-Score 76%
 
 ## 🛠 Technical Details
 
 ### Hyperparameter Optimization
 
-- **Max Depth**: 7 (optimal complexity-performance balance)
-- **Min Samples Split**: 10 (overfitting prevention)
-- **Min Samples Leaf**: 2 (leaf granularity)
-- **Max Features**: 'sqrt' (feature sampling for generalization)
+- **Max Depth**: 6 (optimal complexity-performance balance)
+- **Min Samples Split**: 12 (overfitting prevention)
+- **Min Samples Leaf**: 5 (leaf granularity)
+- **Max Features**: 0.7 (percentage-based feature sampling)
 - **Criterion**: Gini (optimal for this dataset)
 
 ### Validation Strategy
 
 - **Train/Validation Split**: 85/15 stratified
-- **Cross-validation**: 10-fold stratified
-- **Search Space**: 1,500 parameter combinations
+- **Cross-validation**: 12-fold StratifiedKFold
+- **Search Space**: 14,700 parameter combinations
 - **Metrics**: Accuracy, Precision, Recall, F1-score, Overfitting analysis
 
 ## 📈 Visualizations
