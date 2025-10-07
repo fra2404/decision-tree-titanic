@@ -1,0 +1,357 @@
+%!TeX program = pdflatex
+\documentclass[12pt,a4paper]{article}
+
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+% Typography and layout
+\usepackage{times}
+\usepackage{setspace}
+\setstretch{1.15}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+% Graphics and colors
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% Math packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+% Tables and lists
+\usepackage{array}
+\usepackage{enumerate}
+
+% Code listings
+\usepackage{listings}
+
+% Configure code listings
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{pythonstyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=Python
+}
+
+\lstset{style=pythonstyle}
+
+% References and hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=red,
+}
+
+% Header and footer
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Titanic ID3 Project}
+\fancyhead[R]{Francesco Albano}
+\fancyfoot[C]{\thepage}
+
+% Title page information
+\title{
+    \vspace{2cm}
+    \Huge \textbf{Titanic Survival Prediction} \\
+    \vspace{0.5cm}
+    \Large Pure ID3 Algorithm Implementation \\
+    \vspace{1cm}
+    \large Project Report - Artificial Intelligence Course
+}
+
+\author{
+    Francesco Albano \\
+    Student ID: lj2506219 \\
+    Computer Science and Technology \\
+    Beihang University (BUAA)
+}
+
+\date{\today}
+
+% Custom commands
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{#1}}
+
+\begin{document}
+
+%% Title page
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+%% Table of contents
+\tableofcontents
+\newpage
+
+%% Project Overview
+\section{Project Overview}
+
+This project implements a Titanic passenger survival prediction system using the pure ID3 decision tree algorithm. The goal was to create a complete, well-documented implementation that demonstrates both the theoretical understanding of the ID3 algorithm and practical data science skills.
+
+\subsection{Objectives}
+\begin{itemize}
+    \item Implement pure ID3 algorithm following Professor Bai Xiao's specifications
+    \item Achieve high prediction accuracy through data preprocessing
+    \item Create modular, maintainable code architecture
+    \item Generate professional visualizations and documentation
+\end{itemize}
+
+\subsection{Key Results}
+\begin{itemize}
+    \item \textbf{89.23\% accuracy} on training data
+    \item \textbf{4 modular components} for clean code organization
+    \item \textbf{Depth optimization} finding optimal balance at depth 5
+    \item \textbf{Professional visualizations} with scikit-learn integration
+\end{itemize}
+
+%% System Architecture
+\section{System Architecture}
+
+The project uses a modular design with four main components:
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{|l|p{8cm}|}
+\hline
+\textbf{Module} & \textbf{Function} \\
+\hline
+\file{id3\_core\_algorithm.py} & Pure ID3 implementation with entropy and information gain calculations \\
+\hline
+\file{data\_preprocessor.py} & Advanced data cleaning, optimal binning, feature engineering \\
+\hline
+\file{visualization\_export.py} & Chart generation and CSV export using scikit-learn style \\
+\hline
+\file{main\_titanic\_id3.py} & Main application that coordinates all components \\
+\hline
+\end{tabular}
+\caption{System Components}
+\end{table}
+
+This modular approach provides:
+\begin{itemize}
+    \item \textbf{Maintainability}: Each component has a single responsibility
+    \item \textbf{Testability}: Components can be tested independently
+    \item \textbf{Reusability}: Modules can be used in other projects
+    \item \textbf{Readability}: Clean separation makes code easier to understand
+\end{itemize}
+
+%% Algorithm Implementation
+\section{Algorithm Implementation}
+
+\subsection{ID3 Core Algorithm}
+The \file{PureID3Algorithm} class implements the standard ID3 algorithm with manual entropy calculation:
+
+\begin{equation}
+E(S) = -\sum_{i=1}^{c} p_i \log_2(p_i)
+\end{equation}
+
+\begin{equation}
+IG(S,A) = E(S) - \sum_{v \in Values(A)} \frac{|S_v|}{|S|} E(S_v)
+\end{equation}
+
+Key features:
+\begin{itemize}
+    \item Manual entropy and information gain calculations
+    \item Recursive tree building
+    \item Optional depth limiting for optimization
+    \item Pure Python implementation without external ML libraries
+\end{itemize}
+
+\subsection{Data Preprocessing}
+Advanced preprocessing techniques significantly improved performance:
+
+\begin{itemize}
+    \item \textbf{Outlier Handling}: IQR-based capping instead of removal
+    \item \textbf{Optimal Binning}: Information gain-driven binning for Age (6 bins) and Fare (6 bins)
+    \item \textbf{Feature Engineering}: Title extraction, family size calculation
+    \item \textbf{Missing Values}: Smart imputation using mode and median
+\end{itemize}
+
+%% Results and Performance
+\section{Results and Performance}
+
+\subsection{Model Performance}
+The final optimized model achieved excellent results:
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Metric} & \textbf{Value} \\
+\hline
+Training Accuracy & 89.23\% \\
+Total Samples & 891 \\
+Correct Predictions & 795 \\
+Tree Depth & 5 layers \\
+Decision Rules & 207 \\
+Total Nodes & 323 \\
+\hline
+\end{tabular}
+\caption{Model Performance Summary}
+\end{table}
+
+\subsection{Depth Optimization Analysis}
+A systematic analysis determined the optimal tree depth:
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Max Depth} & \textbf{Accuracy} & \textbf{Nodes} & \textbf{Evaluation} \\
+\hline
+3 & 88.11\% & 295 & Good baseline \\
+4 & 88.67\% & 309 & Gradual improvement \\
+\textbf{5} & \textbf{89.23\%} & \textbf{323} & \textbf{Optimal balance} \\
+6 & 89.90\% & 337 & Diminishing returns \\
+Unlimited & 89.90\% & 450 & Overfitting risk \\
+\hline
+\end{tabular}
+\caption{Depth Optimization Results}
+\end{table}
+
+\textbf{Depth 5 was chosen} because it provides 89.23\% accuracy (only 0.67\% lower than unlimited) with 28\% fewer nodes, resulting in much cleaner visualizations.
+
+%% Visualization and Output
+\section{Visualization and Output}
+
+\subsection{Professional Tree Visualization}
+The system generates high-quality decision tree diagrams using scikit-learn's \code{plot\_tree} function. This provides:
+\begin{itemize}
+    \item Clean, academic-style tree diagrams
+    \item Color-coded nodes showing class distribution
+    \item Readable node labels with decision criteria
+    \item High-resolution PNG output suitable for presentations
+\end{itemize}
+
+\subsection{Data Export}
+Comprehensive CSV exports include:
+\begin{itemize}
+    \item Prediction results with confidence scores
+    \item Feature importance analysis
+    \item Decision path explanations
+    \item Performance statistics by passenger category
+\end{itemize}
+
+%% Technical Implementation
+\section{Technical Implementation}
+
+\subsection{Code Quality}
+The project follows professional development standards:
+\begin{itemize}
+    \item \textbf{PEP 8 compliance} for Python code style
+    \item \textbf{Comprehensive docstrings} for all functions
+    \item \textbf{Type hints} for better code documentation
+    \item \textbf{Error handling} with appropriate exceptions
+    \item \textbf{Modular design} for maintainability
+\end{itemize}
+
+\subsection{Dependencies}
+The project uses standard Python scientific libraries:
+
+\begin{lstlisting}[caption=Key Dependencies]
+import pandas as pd          # Data manipulation
+import numpy as np           # Numerical computations
+import matplotlib.pyplot as plt  # Plotting
+import seaborn as sns        # Statistical visualization
+from sklearn.tree import plot_tree  # Professional tree visualization
+import math                  # Mathematical functions
+\end{lstlisting}
+
+%% Project Structure
+\section{Project Structure}
+
+\begin{lstlisting}[caption=File Organization]
+decision-tree-titanic/
++-- src/                           Source code
+|   +-- id3_core_algorithm.py      Core ID3 implementation
+|   +-- data_preprocessor.py       Data preprocessing
+|   +-- visualization_export.py   Visualization system
+|   +-- main_titanic_id3.py       Main application
++-- data/
+|   +-- titanic.csv               Dataset
++-- results/                      Generated outputs
++-- report/                       Documentation
++-- test_depth_analysis.py        Optimization analysis
++-- README.md                     Project documentation
+\end{lstlisting}
+
+%% Challenges and Solutions
+\section{Challenges and Solutions}
+
+\subsection{Main Challenges}
+\begin{enumerate}
+    \item \textbf{Algorithm Purity}: Maintaining pure ID3 implementation while achieving good performance
+    \item \textbf{Data Quality}: Handling missing values and outliers in Titanic dataset
+    \item \textbf{Visualization}: Creating readable tree diagrams for complex decision trees
+    \item \textbf{Optimization}: Balancing accuracy with interpretability
+\end{enumerate}
+
+\subsection{Solutions Implemented}
+\begin{enumerate}
+    \item \textbf{Preprocessing Focus}: Enhanced data quality without changing core algorithm
+    \item \textbf{Smart Binning}: Used information gain to find optimal continuous variable binning
+    \item \textbf{Depth Limiting}: Systematic analysis to find optimal tree depth
+    \item \textbf{Professional Tools}: Integrated scikit-learn visualization for clean output
+\end{enumerate}
+
+%% Conclusions
+\section{Conclusions}
+
+\subsection{Project Success}
+This project successfully demonstrates:
+\begin{itemize}
+    \item \textbf{Theoretical Understanding}: Correct implementation of ID3 algorithm mathematics
+    \item \textbf{Practical Skills}: Advanced data preprocessing and feature engineering
+    \item \textbf{Software Engineering}: Professional code organization and documentation
+    \item \textbf{Optimization}: Systematic approach to hyperparameter tuning
+\end{itemize}
+
+\subsection{Key Achievements}
+\begin{itemize}
+    \item \textbf{89.23\% accuracy} with pure ID3 algorithm
+    \item \textbf{Modular architecture} suitable for extension and maintenance
+    \item \textbf{Professional visualization} system for clear result presentation
+    \item \textbf{Comprehensive documentation} for academic and practical use
+\end{itemize}
+
+\subsection{Learning Outcomes}
+The project provided valuable experience in:
+\begin{itemize}
+    \item Machine learning algorithm implementation from scratch
+    \item Data science workflow development
+    \item Software engineering best practices
+    \item Academic documentation and presentation
+\end{itemize}
+
+This implementation demonstrates that maintaining algorithmic purity does not prevent achieving excellent practical results when combined with intelligent data preprocessing and systematic optimization approaches.
+
+\end{document}

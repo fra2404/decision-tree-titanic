@@ -1,0 +1,208 @@
+Rule_ID,Rule,Outcome
+1,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Young_Adult AND Embarked = Southampton AND Family_Size_Group = Couple THEN Survived = No,No
+2,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Young_Adult AND Embarked = Southampton AND Family_Size_Group = Alone THEN Survived = No,No
+3,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Young_Adult AND Embarked = Cherbourg AND Sex = male THEN Survived = No,No
+4,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Young_Adult AND Embarked = Queenstown THEN Survived = No,No
+5,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Adult AND Embarked = Cherbourg AND Sex = male THEN Survived = No,No
+6,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Adult AND Embarked = Southampton AND Family_Size_Group = Alone THEN Survived = No,No
+7,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Adult AND Embarked = Southampton AND Family_Size_Group = Couple THEN Survived = No,No
+8,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Adult AND Embarked = Queenstown AND Family_Size_Group = Alone THEN Survived = No,No
+9,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Adult AND Embarked = Queenstown AND Family_Size_Group = Couple THEN Survived = No,No
+10,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Middle_Age AND Pclass = Third AND Embarked = Cherbourg THEN Survived = No,No
+11,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Middle_Age AND Pclass = Third AND Embarked = Southampton THEN Survived = No,No
+12,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Middle_Age AND Pclass = Third AND Embarked = Queenstown THEN Survived = No,No
+13,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Middle_Age AND Pclass = Second THEN Survived = No,No
+14,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Elderly THEN Survived = No,No
+15,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Child THEN Survived = No,No
+16,IF Title_Group = Mr AND Fare_Group = Low AND Age_Group = Senior THEN Survived = No,No
+17,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Senior AND Embarked = Southampton AND Family_Size_Group = Alone THEN Survived = No,No
+18,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Senior AND Embarked = Southampton AND Family_Size_Group = Small_Family THEN Survived = No,No
+19,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Senior AND Embarked = Cherbourg THEN Survived = No,No
+20,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Adult AND Embarked = Queenstown THEN Survived = No,No
+21,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Adult AND Embarked = Southampton AND Family_Size_Group = Alone THEN Survived = No,No
+22,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Adult AND Embarked = Southampton AND Family_Size_Group = Small_Family THEN Survived = No,No
+23,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Adult AND Embarked = Southampton AND Family_Size_Group = Couple THEN Survived = No,No
+24,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Adult AND Embarked = Cherbourg THEN Survived = No,No
+25,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Young_Adult AND Family_Size_Group = Alone AND Sex = male THEN Survived = No,No
+26,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Young_Adult AND Family_Size_Group = Couple THEN Survived = Yes,Yes
+27,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Child AND Family_Size_Group = Alone AND Sex = male THEN Survived = No,No
+28,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Child AND Family_Size_Group = Small_Family THEN Survived = No,No
+29,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Middle_Age AND Embarked = Southampton AND Family_Size_Group = Alone THEN Survived = No,No
+30,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Middle_Age AND Embarked = Southampton AND Family_Size_Group = Small_Family THEN Survived = No,No
+31,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Middle_Age AND Embarked = Cherbourg THEN Survived = Yes,Yes
+32,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Elderly AND Family_Size_Group = Alone AND Sex = male THEN Survived = No,No
+33,IF Title_Group = Mr AND Fare_Group = Medium AND Age_Group = Elderly AND Family_Size_Group = Couple THEN Survived = No,No
+34,IF Title_Group = Mr AND Fare_Group = Luxury AND Pclass = First AND Age_Group = Elderly AND Embarked = Southampton THEN Survived = No,No
+35,IF Title_Group = Mr AND Fare_Group = Luxury AND Pclass = First AND Age_Group = Elderly AND Embarked = Cherbourg THEN Survived = No,No
+36,IF Title_Group = Mr AND Fare_Group = Luxury AND Pclass = First AND Age_Group = Middle_Age AND Family_Size_Group = Alone THEN Survived = No,No
+37,IF Title_Group = Mr AND Fare_Group = Luxury AND Pclass = First AND Age_Group = Middle_Age AND Family_Size_Group = Couple THEN Survived = No,No
+38,IF Title_Group = Mr AND Fare_Group = Luxury AND Pclass = First AND Age_Group = Senior AND Family_Size_Group = Alone THEN Survived = Yes,Yes
+39,IF Title_Group = Mr AND Fare_Group = Luxury AND Pclass = First AND Age_Group = Senior AND Family_Size_Group = Couple THEN Survived = No,No
+40,IF Title_Group = Mr AND Fare_Group = Luxury AND Pclass = First AND Age_Group = Adult THEN Survived = Yes,Yes
+41,IF Title_Group = Mr AND Fare_Group = Luxury AND Pclass = Third THEN Survived = No,No
+42,IF Title_Group = Mr AND Fare_Group = Luxury AND Pclass = Second THEN Survived = No,No
+43,IF Title_Group = Mr AND Fare_Group = High AND Age_Group = Middle_Age AND Embarked = Southampton AND Pclass = Second THEN Survived = No,No
+44,IF Title_Group = Mr AND Fare_Group = High AND Age_Group = Middle_Age AND Embarked = Southampton AND Pclass = Third THEN Survived = No,No
+45,IF Title_Group = Mr AND Fare_Group = High AND Age_Group = Middle_Age AND Embarked = Cherbourg AND Pclass = Second THEN Survived = Yes,Yes
+46,IF Title_Group = Mr AND Fare_Group = High AND Age_Group = Middle_Age AND Embarked = Cherbourg AND Pclass = Third THEN Survived = No,No
+47,IF Title_Group = Mr AND Fare_Group = High AND Age_Group = Senior AND Pclass = Second AND Embarked = Southampton THEN Survived = No,No
+48,IF Title_Group = Mr AND Fare_Group = High AND Age_Group = Senior AND Pclass = Second AND Embarked = Cherbourg THEN Survived = No,No
+49,IF Title_Group = Mr AND Fare_Group = High AND Age_Group = Senior AND Pclass = Third THEN Survived = No,No
+50,IF Title_Group = Mr AND Fare_Group = High AND Age_Group = Elderly AND Pclass = Second AND Sex = male THEN Survived = No,No
+51,IF Title_Group = Mr AND Fare_Group = High AND Age_Group = Elderly AND Pclass = Third THEN Survived = No,No
+52,IF Title_Group = Mr AND Fare_Group = High AND Age_Group = Adult THEN Survived = No,No
+53,IF Title_Group = Mr AND Fare_Group = High AND Age_Group = Young_Adult THEN Survived = No,No
+54,IF Title_Group = Mr AND Fare_Group = High AND Age_Group = Child AND Pclass = Third THEN Survived = No,No
+55,IF Title_Group = Mr AND Fare_Group = High AND Age_Group = Child AND Pclass = Second AND Sex = male THEN Survived = No,No
+56,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Senior THEN Survived = No,No
+57,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Adult AND Embarked = Queenstown AND Family_Size_Group = Couple THEN Survived = No,No
+58,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Adult AND Embarked = Queenstown AND Family_Size_Group = Small_Family THEN Survived = Yes,Yes
+59,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Adult AND Embarked = Queenstown AND Family_Size_Group = Alone THEN Survived = No,No
+60,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Adult AND Embarked = Cherbourg AND Family_Size_Group = Small_Family THEN Survived = No,No
+61,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Adult AND Embarked = Cherbourg AND Family_Size_Group = Alone THEN Survived = No,No
+62,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Adult AND Embarked = Southampton THEN Survived = No,No
+63,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Middle_Age AND Pclass = Second AND Family_Size_Group = Couple THEN Survived = No,No
+64,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Middle_Age AND Pclass = Second AND Family_Size_Group = Alone THEN Survived = No,No
+65,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Middle_Age AND Pclass = Third THEN Survived = No,No
+66,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Young_Adult AND Family_Size_Group = Alone THEN Survived = No,No
+67,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Young_Adult AND Family_Size_Group = Small_Family AND Embarked = Southampton THEN Survived = No,No
+68,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Young_Adult AND Family_Size_Group = Small_Family AND Embarked = Cherbourg THEN Survived = Yes,Yes
+69,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Young_Adult AND Family_Size_Group = Couple THEN Survived = No,No
+70,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Elderly THEN Survived = No,No
+71,IF Title_Group = Mr AND Fare_Group = Very_High AND Age_Group = Child THEN Survived = No,No
+72,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Child AND Family_Size_Group = Medium_Family THEN Survived = No,No
+73,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Child AND Family_Size_Group = Alone THEN Survived = No,No
+74,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Child AND Family_Size_Group = Couple THEN Survived = No,No
+75,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Child AND Family_Size_Group = Small_Family THEN Survived = Yes,Yes
+76,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Middle_Age AND Family_Size_Group = Couple AND Embarked = Cherbourg THEN Survived = No,No
+77,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Middle_Age AND Family_Size_Group = Couple AND Embarked = Southampton THEN Survived = Yes,Yes
+78,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Middle_Age AND Family_Size_Group = Alone AND Pclass = Third THEN Survived = Yes,Yes
+79,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Middle_Age AND Family_Size_Group = Alone AND Pclass = First THEN Survived = Yes,Yes
+80,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Middle_Age AND Family_Size_Group = Small_Family THEN Survived = No,No
+81,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Elderly AND Family_Size_Group = Couple AND Embarked = Cherbourg THEN Survived = No,No
+82,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Elderly AND Family_Size_Group = Couple AND Embarked = Southampton THEN Survived = No,No
+83,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Elderly AND Family_Size_Group = Small_Family AND Embarked = Southampton THEN Survived = No,No
+84,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Elderly AND Family_Size_Group = Small_Family AND Embarked = Cherbourg THEN Survived = No,No
+85,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Elderly AND Family_Size_Group = Medium_Family THEN Survived = No,No
+86,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Elderly AND Family_Size_Group = Alone THEN Survived = No,No
+87,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Young_Adult AND Family_Size_Group = Alone THEN Survived = No,No
+88,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Young_Adult AND Family_Size_Group = Couple AND Embarked = Cherbourg THEN Survived = No,No
+89,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Young_Adult AND Family_Size_Group = Couple AND Embarked = Southampton THEN Survived = No,No
+90,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Young_Adult AND Family_Size_Group = Small_Family THEN Survived = No,No
+91,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Senior AND Family_Size_Group = Couple AND Embarked = Southampton THEN Survived = No,No
+92,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Senior AND Family_Size_Group = Couple AND Embarked = Cherbourg THEN Survived = Yes,Yes
+93,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Senior AND Family_Size_Group = Small_Family THEN Survived = Yes,Yes
+94,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Senior AND Family_Size_Group = Alone AND Embarked = Southampton THEN Survived = No,No
+95,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Senior AND Family_Size_Group = Alone AND Embarked = Cherbourg THEN Survived = No,No
+96,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Adult AND Family_Size_Group = Large_Family THEN Survived = No,No
+97,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Adult AND Family_Size_Group = Couple THEN Survived = Yes,Yes
+98,IF Title_Group = Mr AND Fare_Group = Super_Luxury AND Age_Group = Adult AND Family_Size_Group = Alone AND Sex = male THEN Survived = Yes,Yes
+99,IF Title_Group = Mrs AND Pclass = First AND Age_Group = Senior THEN Survived = Yes,Yes
+100,IF Title_Group = Mrs AND Pclass = First AND Age_Group = Elderly THEN Survived = Yes,Yes
+101,IF Title_Group = Mrs AND Pclass = First AND Age_Group = Young_Adult THEN Survived = Yes,Yes
+102,IF Title_Group = Mrs AND Pclass = First AND Age_Group = Child THEN Survived = Yes,Yes
+103,IF Title_Group = Mrs AND Pclass = First AND Age_Group = Adult THEN Survived = No,No
+104,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Middle_Age AND Family_Size_Group = Small_Family AND Embarked = Southampton THEN Survived = No,No
+105,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Middle_Age AND Family_Size_Group = Small_Family AND Embarked = Cherbourg THEN Survived = Yes,Yes
+106,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Middle_Age AND Family_Size_Group = Small_Family AND Embarked = Queenstown THEN Survived = No,No
+107,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Middle_Age AND Family_Size_Group = Couple AND Fare_Group = Very_High THEN Survived = No,No
+108,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Middle_Age AND Family_Size_Group = Couple AND Fare_Group = High THEN Survived = Yes,Yes
+109,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Middle_Age AND Family_Size_Group = Medium_Family THEN Survived = No,No
+110,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Middle_Age AND Family_Size_Group = Alone THEN Survived = Yes,Yes
+111,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Young_Adult AND Fare_Group = Low THEN Survived = Yes,Yes
+112,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Young_Adult AND Fare_Group = Very_High AND Embarked = Cherbourg THEN Survived = No,No
+113,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Young_Adult AND Fare_Group = Very_High AND Embarked = Southampton THEN Survived = Yes,Yes
+114,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Young_Adult AND Fare_Group = Very_High AND Embarked = Queenstown THEN Survived = Yes,Yes
+115,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Young_Adult AND Fare_Group = Medium THEN Survived = No,No
+116,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Senior AND Fare_Group = Luxury AND Family_Size_Group = Large_Family THEN Survived = No,No
+117,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Senior AND Fare_Group = Luxury AND Family_Size_Group = Medium_Family THEN Survived = No,No
+118,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Senior AND Fare_Group = High THEN Survived = No,No
+119,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Senior AND Fare_Group = Very_High THEN Survived = Yes,Yes
+120,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Child AND Fare_Group = Very_High THEN Survived = No,No
+121,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Child AND Fare_Group = High THEN Survived = Yes,Yes
+122,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Elderly AND Family_Size_Group = Couple THEN Survived = No,No
+123,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Elderly AND Family_Size_Group = Medium_Family THEN Survived = No,No
+124,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Elderly AND Family_Size_Group = Small_Family THEN Survived = No,No
+125,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Elderly AND Family_Size_Group = Alone THEN Survived = Yes,Yes
+126,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Elderly AND Family_Size_Group = Large_Family THEN Survived = No,No
+127,IF Title_Group = Mrs AND Pclass = Third AND Age_Group = Adult THEN Survived = No,No
+128,IF Title_Group = Mrs AND Pclass = Second AND Age_Group = Child THEN Survived = Yes,Yes
+129,IF Title_Group = Mrs AND Pclass = Second AND Age_Group = Elderly AND Family_Size_Group = Alone AND Fare_Group = Very_High THEN Survived = Yes,Yes
+130,IF Title_Group = Mrs AND Pclass = Second AND Age_Group = Elderly AND Family_Size_Group = Alone AND Fare_Group = High THEN Survived = Yes,Yes
+131,IF Title_Group = Mrs AND Pclass = Second AND Age_Group = Elderly AND Family_Size_Group = Couple AND Sex = female THEN Survived = Yes,Yes
+132,IF Title_Group = Mrs AND Pclass = Second AND Age_Group = Elderly AND Family_Size_Group = Small_Family THEN Survived = Yes,Yes
+133,IF Title_Group = Mrs AND Pclass = Second AND Age_Group = Elderly AND Family_Size_Group = Medium_Family THEN Survived = Yes,Yes
+134,IF Title_Group = Mrs AND Pclass = Second AND Age_Group = Middle_Age AND Family_Size_Group = Couple AND Embarked = Southampton THEN Survived = Yes,Yes
+135,IF Title_Group = Mrs AND Pclass = Second AND Age_Group = Middle_Age AND Family_Size_Group = Couple AND Embarked = Cherbourg THEN Survived = Yes,Yes
+136,IF Title_Group = Mrs AND Pclass = Second AND Age_Group = Middle_Age AND Family_Size_Group = Alone THEN Survived = Yes,Yes
+137,IF Title_Group = Mrs AND Pclass = Second AND Age_Group = Middle_Age AND Family_Size_Group = Small_Family THEN Survived = Yes,Yes
+138,IF Title_Group = Mrs AND Pclass = Second AND Age_Group = Senior THEN Survived = Yes,Yes
+139,IF Title_Group = Mrs AND Pclass = Second AND Age_Group = Young_Adult THEN Survived = Yes,Yes
+140,IF Title_Group = Mrs AND Pclass = Second AND Age_Group = Adult AND Family_Size_Group = Small_Family THEN Survived = No,No
+141,IF Title_Group = Mrs AND Pclass = Second AND Age_Group = Adult AND Family_Size_Group = Couple THEN Survived = Yes,Yes
+142,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Alone AND Age_Group = Adult AND Fare_Group = Medium THEN Survived = Yes,Yes
+143,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Alone AND Age_Group = Adult AND Fare_Group = Low THEN Survived = No,No
+144,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Alone AND Age_Group = Child AND Fare_Group = Medium THEN Survived = Yes,Yes
+145,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Alone AND Age_Group = Child AND Fare_Group = Very_High THEN Survived = No,No
+146,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Alone AND Age_Group = Child AND Fare_Group = Low THEN Survived = Yes,Yes
+147,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Alone AND Age_Group = Child AND Fare_Group = High THEN Survived = Yes,Yes
+148,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Alone AND Age_Group = Young_Adult AND Fare_Group = Medium THEN Survived = Yes,Yes
+149,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Alone AND Age_Group = Young_Adult AND Fare_Group = Low THEN Survived = Yes,Yes
+150,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Alone AND Age_Group = Young_Adult AND Fare_Group = High THEN Survived = No,No
+151,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Alone AND Age_Group = Middle_Age AND Fare_Group = High THEN Survived = Yes,Yes
+152,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Alone AND Age_Group = Middle_Age AND Fare_Group = Medium THEN Survived = No,No
+153,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Alone AND Age_Group = Middle_Age AND Fare_Group = Low THEN Survived = No,No
+154,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Alone AND Age_Group = Elderly THEN Survived = No,No
+155,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Alone AND Age_Group = Senior THEN Survived = No,No
+156,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Small_Family AND Fare_Group = Very_High AND Embarked = Southampton THEN Survived = No,No
+157,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Small_Family AND Fare_Group = Very_High AND Embarked = Cherbourg THEN Survived = Yes,Yes
+158,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Small_Family AND Fare_Group = Very_High AND Embarked = Queenstown THEN Survived = Yes,Yes
+159,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Small_Family AND Fare_Group = High THEN Survived = Yes,Yes
+160,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Small_Family AND Fare_Group = Low THEN Survived = No,No
+161,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Medium_Family THEN Survived = No,No
+162,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Couple AND Fare_Group = High AND Age_Group = Child THEN Survived = No,No
+163,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Couple AND Fare_Group = High AND Age_Group = Young_Adult THEN Survived = No,No
+164,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Couple AND Fare_Group = Very_High THEN Survived = Yes,Yes
+165,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Couple AND Fare_Group = Medium AND Age_Group = Child THEN Survived = Yes,Yes
+166,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Couple AND Fare_Group = Medium AND Age_Group = Adult THEN Survived = No,No
+167,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Large_Family AND Fare_Group = Medium THEN Survived = Yes,Yes
+168,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Large_Family AND Fare_Group = Luxury AND Sex = female THEN Survived = No,No
+169,IF Title_Group = Miss AND Pclass = Third AND Family_Size_Group = Large_Family AND Fare_Group = Super_Luxury THEN Survived = No,No
+170,IF Title_Group = Miss AND Pclass = First AND Age_Group = Elderly AND Fare_Group = Luxury AND Embarked = Southampton THEN Survived = Yes,Yes
+171,IF Title_Group = Miss AND Pclass = First AND Age_Group = Elderly AND Fare_Group = Luxury AND Embarked = Cherbourg THEN Survived = No,No
+172,IF Title_Group = Miss AND Pclass = First AND Age_Group = Elderly AND Fare_Group = Super_Luxury THEN Survived = Yes,Yes
+173,IF Title_Group = Miss AND Pclass = First AND Age_Group = Senior THEN Survived = Yes,Yes
+174,IF Title_Group = Miss AND Pclass = First AND Age_Group = Young_Adult THEN Survived = Yes,Yes
+175,IF Title_Group = Miss AND Pclass = First AND Age_Group = Child AND Family_Size_Group = Small_Family AND Fare_Group = Luxury THEN Survived = Yes,Yes
+176,IF Title_Group = Miss AND Pclass = First AND Age_Group = Child AND Family_Size_Group = Small_Family AND Fare_Group = Super_Luxury THEN Survived = Yes,Yes
+177,IF Title_Group = Miss AND Pclass = First AND Age_Group = Child AND Family_Size_Group = Medium_Family THEN Survived = Yes,Yes
+178,IF Title_Group = Miss AND Pclass = First AND Age_Group = Child AND Family_Size_Group = Couple THEN Survived = Yes,Yes
+179,IF Title_Group = Miss AND Pclass = First AND Age_Group = Child AND Family_Size_Group = Alone THEN Survived = Yes,Yes
+180,IF Title_Group = Miss AND Pclass = First AND Age_Group = Middle_Age THEN Survived = Yes,Yes
+181,IF Title_Group = Miss AND Pclass = First AND Age_Group = Adult THEN Survived = Yes,Yes
+182,IF Title_Group = Miss AND Pclass = Second AND Age_Group = Child THEN Survived = Yes,Yes
+183,IF Title_Group = Miss AND Pclass = Second AND Age_Group = Young_Adult AND Fare_Group = High AND Sex = female THEN Survived = Yes,Yes
+184,IF Title_Group = Miss AND Pclass = Second AND Age_Group = Young_Adult AND Fare_Group = Super_Luxury THEN Survived = Yes,Yes
+185,IF Title_Group = Miss AND Pclass = Second AND Age_Group = Middle_Age THEN Survived = Yes,Yes
+186,IF Title_Group = Miss AND Pclass = Second AND Age_Group = Senior AND Fare_Group = Very_High THEN Survived = Yes,Yes
+187,IF Title_Group = Miss AND Pclass = Second AND Age_Group = Senior AND Fare_Group = High AND Sex = female THEN Survived = Yes,Yes
+188,IF Title_Group = Miss AND Pclass = Second AND Age_Group = Elderly THEN Survived = Yes,Yes
+189,IF Title_Group = Miss AND Pclass = Second AND Age_Group = Adult THEN Survived = Yes,Yes
+190,IF Title_Group = Master AND Family_Size_Group = Medium_Family THEN Survived = No,No
+191,IF Title_Group = Master AND Family_Size_Group = Large_Family AND Age_Group = Child AND Sex = male AND Pclass = Third THEN Survived = No,No
+192,IF Title_Group = Master AND Family_Size_Group = Large_Family AND Age_Group = Adult THEN Survived = No,No
+193,IF Title_Group = Master AND Family_Size_Group = Small_Family THEN Survived = Yes,Yes
+194,IF Title_Group = Master AND Family_Size_Group = Couple THEN Survived = Yes,Yes
+195,IF Title_Group = Noble AND Fare_Group = Luxury AND Sex = male THEN Survived = No,No
+196,IF Title_Group = Noble AND Fare_Group = Luxury AND Sex = female THEN Survived = Yes,Yes
+197,IF Title_Group = Noble AND Fare_Group = Super_Luxury THEN Survived = Yes,Yes
+198,IF Title_Group = Noble AND Fare_Group = Low THEN Survived = No,No
+199,IF Title_Group = Professional AND Pclass = Second THEN Survived = No,No
+200,IF Title_Group = Professional AND Pclass = First AND Age_Group = Elderly AND Embarked = Queenstown THEN Survived = No,No
+201,IF Title_Group = Professional AND Pclass = First AND Age_Group = Elderly AND Embarked = Southampton AND Fare_Group = Luxury THEN Survived = No,No
+202,IF Title_Group = Professional AND Pclass = First AND Age_Group = Elderly AND Embarked = Southampton AND Fare_Group = Super_Luxury THEN Survived = No,No
+203,IF Title_Group = Professional AND Pclass = First AND Age_Group = Elderly AND Embarked = Southampton AND Fare_Group = Very_High THEN Survived = Yes,Yes
+204,IF Title_Group = Professional AND Pclass = First AND Age_Group = Elderly AND Embarked = Cherbourg THEN Survived = Yes,Yes
+205,IF Title_Group = Professional AND Pclass = First AND Age_Group = Middle_Age THEN Survived = Yes,Yes
+206,IF Title_Group = Professional AND Pclass = First AND Age_Group = Senior THEN Survived = No,No
+207,IF Title_Group = Other THEN Survived = Yes,Yes

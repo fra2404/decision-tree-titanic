@@ -1,0 +1,8 @@
+Metric,Value
+Total_Examples,891
+Model_Accuracy,0.8923
+Total_Rules,207
+Survival_Rules,81
+Death_Rules,128
+Tree_Depth,5
+Tree_Nodes,323

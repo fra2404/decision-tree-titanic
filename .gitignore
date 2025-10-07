@@ -79,7 +79,6 @@ $RECYCLE.BIN/
 # *.xlsx
 
 # Results and temporary files
-*.png
 *.jpg
 *.jpeg
 *.gif
