@@ -84,8 +84,14 @@ $RECYCLE.BIN/
 *.gif
 *.pdf
 *.log
+*.fls
+*.fdb_latexmk
+*.out
+*.gz
+*.toc
 *.tmp
 *.temp
+*.aux
 
 # Kaggle
 kaggle.json*.zip
